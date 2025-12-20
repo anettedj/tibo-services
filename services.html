@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; script-src 'self' 'unsafe-inline'; img-src 'self' data:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com;">
+    <title>Nos Services - TIBO Services</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <script src="js/main.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <img src="images/tibo.png" alt="Logo TIBO Services">
+            </div>
+            <div class="menu-toggle" id="mobile-menu">
+                <span>&#9776;</span>
+            </div>
+            <nav>
+                <ul id="nav-list">
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="services.html" class="active">Nos Services</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Subpage Hero -->
+    <section class="header-slider" style="height: 40vh;">
+        <img src="images/slider1.webp" alt="Service Hero 1" class="slide">
+        <img src="images/slider2.webp" alt="Service Hero 2" class="slide">
+        <img src="images/slider4.webp" alt="Service Hero 3" class="slide">
+        <img src="images/tibo.png" alt="TIBO Services" class="slide"
+            style="object-fit: contain; background: rgba(10,25,47,0.8);">
+
+        <div class="hero-content">
+            <h1>Nos Services</h1>
+            <p>Une gamme complète de solutions conçues pour vous.</p>
+        </div>
+    </section>
+
+    <section class="services animate-on-scroll">
+        <div class="section-subtitle">Découvrez comment nous pouvons faciliter votre quotidien.</div>
+
+        <div class="search-bar">
+            <input type="text" id="service-search" placeholder="Rechercher un service (ex: assurance, recharge...)">
+        </div>
+
+        <!-- MENU / TABS NAVIGATION -->
+        <div class="tabs-container">
+            <button class="tab-btn active" data-tab="overview">Tous les services</button>
+            <button class="tab-btn" data-tab="assurances">Assurances</button>
+            <button class="tab-btn" data-tab="photocopies">Photocopie & Impression</button>
+            <button class="tab-btn" data-tab="recharges">Recharges</button>
+            <button class="tab-btn" data-tab="abonnements">Abonnements Canal+</button>
+            <button class="tab-btn" data-tab="photos">Photos d'Identité</button>
+            <button class="tab-btn" data-tab="wifi">Wifi Zone</button>
+            <button class="tab-btn" data-tab="autres">Autres Services</button>
+        </div>
+
+        <!-- DYNAMIC CONTENT AREA -->
+        <div class="dynamic-content-area">
+
+            <!-- 1. DEFAULT OVERVIEW (The Original Grid) -->
+            <div id="overview" class="content-section active">
+                <div class="service-list">
+                    <div class="service-card" onclick="document.querySelector('[data-tab=\'recharges\']').click()">
+                        <img src="images/prepaid-card.webp" alt="Recharge">
+                        <h3>Recharge Cartes Prépayées</h3>
+                        <p>Rechargez rapidement vos cartes mobile et internet. Service disponible 24/7.</p>
+                    </div>
+                    <div class="service-card" onclick="document.querySelector('[data-tab=\'recharges\']').click()">
+                        <img src="images/slider1.webp" alt="Vente Cartes">
+                        <h3>Vente de Cartes</h3>
+                        <p>Cartes cadeaux, cartes SIM, et autres produits prépayés disponibles en agence.</p>
+                    </div>
+                    <div class="service-card" onclick="document.querySelector('[data-tab=\'assurances\']').click()">
+                        <img src="images/logo-sunu.webp" alt="Auto">
+                        <h3>Assurances</h3>
+                        <p>Auto, Santé, Habitation, Vie, Voyage... Découvrez nos offres complètes.</p>
+                    </div>
+                    <div class="service-card" onclick="document.querySelector('[data-tab=\'photocopies\']').click()">
+                        <img src="images/printing.webp" alt="Impression">
+                        <h3>Services d'Impression</h3>
+                        <p>Documents, photos, photocopies. Qualité professionnelle garantie.</p>
+                    </div>
+                    <div class="service-card" onclick="document.querySelector('[data-tab=\'photos\']').click()">
+                        <img src="images/id.jpg" alt="Photos ID">
+                        <h3>Photos d'Identité</h3>
+                        <p>Photos conformes pour passeports, visas et cartes d'identité.</p>
+                    </div>
+                    <div class="service-card" onclick="document.querySelector('[data-tab=\'abonnements\']').click()">
+                        <img src="images/canal-plus.webp" alt="Canal+">
+                        <h3>Abonnements Canal+</h3>
+                        <p>Réabonnement rapide à vos bouquets TV préférés.</p>
+                    </div>
+                    <div class="service-card" onclick="document.querySelector('[data-tab=\'wifi\']').click()">
+                        <img src="images/wifi.jpg" alt="Wifi">
+                        <h3>Wifi Zone</h3>
+                        <p>Connexion haut débit à partir de 100F. 4h, 24h, au mois...</p>
+                    </div>
+                    <!-- New Cards -->
+                    <div class="service-card">
+                        <img src="images/opéra.jpg" alt="Recharge Crédit"> <!-- Placeholder for recharge.png -->
+                        <h3>Recharge de Crédit</h3>
+                        <p>MTN, MOOV, Celtiis.</p>
+                    </div>
+                    <div class="service-card">
+                        <img src="images/retrait.jpg" alt="Retrait Dépôt"> <!-- Placeholder for retrait.png -->
+                        <h3>Retrait et Dépôt d'Argent</h3>
+                        <p>Transactions rapides et sécurisées.</p>
+                    </div>
+                    <div class="service-card" onclick="document.querySelector('[data-tab=\'autres\']').click()">
+                        <img src="images/anip1.jpg" alt="Services Publics"> <!-- Placeholder for public.png -->
+                        <h3>Services Publics</h3>
+                        <p>Acte de naissance sécurisé, CIP, RAVIP...</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2. DETAILED SECTIONS (Hidden by default) -->
+
+            <!-- Assurances -->
+            <div id="assurances" class="content-section">
+                <div class="section-header">
+                    <h2>Nos Solutions d'Assurance</h2>
+                    <p>Une protection complète pour vous, vos proches et vos biens.</p>
+                </div>
+                <div class="insurance-grid">
+                    <div class="insurance-card auto">
+                        <div class="card-icon">🚗</div>
+                        <h3>Assurance Automobile</h3>
+                        <p class="subtitle">Roulez en toute sécurité</p>
+                        <ul class="features">
+                            <li>Responsabilité civile</li>
+                            <li>Dommages tous accidents</li>
+                            <li>Vol & Incendie</li>
+                            <li>Bris de glace</li>
+                        </ul>
+                    </div>
+                    <div class="insurance-card sante">
+                        <div class="card-icon">🏥</div>
+                        <h3>Assurance Santé</h3>
+                        <p class="subtitle">Votre santé, notre priorité</p>
+                        <ul class="features">
+                            <li>Consultations</li>
+                            <li>Hospitalisation</li>
+                            <li>Médicaments</li>
+                            <li>Soins d'urgence</li>
+                        </ul>
+                    </div>
+                    <div class="insurance-card habitation">
+                        <div class="card-icon">🏠</div>
+                        <h3>Assurance Habitation</h3>
+                        <p class="subtitle">Protégez votre foyer</p>
+                        <ul class="features">
+                            <li>Incendie & Explosion</li>
+                            <li>Vol & Vandalisme</li>
+                            <li>Dégâts des eaux</li>
+                        </ul>
+                    </div>
+                    <div class="insurance-card vie">
+                        <div class="card-icon">❤️</div>
+                        <h3>Assurance Vie</h3>
+                        <p class="subtitle">Préparez l'avenir</p>
+                        <ul class="features">
+                            <li>Protection des proches</li>
+                            <li>Épargne retraite</li>
+                            <li>Décès & Invalidité</li>
+                        </ul>
+                    </div>
+                    <div class="insurance-card voyage">
+                        <div class="card-icon">✈️</div>
+                        <h3>Assurance Voyage</h3>
+                        <p class="subtitle">Voyagez l'esprit tranquille</p>
+                        <ul class="features">
+                            <li>Frais médicaux</li>
+                            <li>Rapatriement</li>
+                            <li>Perte de bagages</li>
+                        </ul>
+                    </div>
+                    <div class="insurance-card entreprise">
+                        <div class="card-icon">🏢</div>
+                        <h3>Assurance Entreprise</h3>
+                        <p class="subtitle">Sécurisez votre activité</p>
+                        <ul class="features">
+                            <li>Responsabilité Pro</li>
+                            <li>Multirisque Pro</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Photocopie -->
+            <div id="photocopies" class="content-section">
+                <div class="section-header">
+                    <h2>Photocopie & Impression</h2>
+                    <p>Service rapide de qualité professionnelle.</p>
+                </div>
+                <div class="pricing-table-container">
+                    <table class="pricing-table">
+                        <thead>
+                            <tr>
+                                <th>Service</th>
+                                <th>Type</th>
+                                <th>Prix Unitaire</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td rowspan="2"><strong>Photocopie</strong></td>
+                                <td>Blanc / Noir</td>
+                                <td>10 FCFA</td>
+                            </tr>
+                            <tr>
+                                <td>Couleur</td>
+                                <td>50 FCFA</td>
+                            </tr>
+                            <tr>
+                                <td rowspan="2"><strong>Impression</strong></td>
+                                <td>Blanc / Noir</td>
+                                <td>15 FCFA</td>
+                            </tr>
+                            <tr>
+                                <td>Couleur</td>
+                                <td>50 - 100 FCFA</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Recharges (Banking Services) -->
+            <div id="recharges" class="content-section">
+                <div class="section-header">
+                    <h2>Services Bancaires & Cartes</h2>
+                    <p>Etablissez ou rechargez vos cartes bancaires chez nous.</p>
+                </div>
+                <div class="banking-grid">
+                    <div class="banking-card">
+                        <img src="images/uba-logo.webp" alt="UBA">
+                        <div class="banking-info">
+                            <h3>Cartes Prépayées UBA</h3>
+                            <p>Achat et rechargement de cartes UBA. Solde, retraits, paiements en ligne.</p>
+                        </div>
+                    </div>
+                    <div class="banking-card">
+                        <img src="images/ecobank-logo.webp" alt="Ecobank">
+                        <div class="banking-info">
+                            <h3>Cartes Ecobank</h3>
+                            <p>Services Xpress Cash, rechargement et achat de cartes Ecobank.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Canal+ (Accordion) -->
+            <div id="abonnements" class="content-section">
+                <div class="section-header">
+                    <h2>Abonnements Canal+</h2>
+                    <div class="canal-categories"
+                        style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin: 20px 0; font-weight: bold; color: var(--color-text-dark);">
+                        <span>🎬 Film / Netflix</span>
+                        <span>📺 TV</span>
+                        <span>⚽ Sport</span>
+                        <span>👨‍👩‍👧‍👦 Famille</span>
+                        <span>🔥 Offres spéciales</span>
+                    </div>
+                    <div class="netflix-promo"
+                        style="background: linear-gradient(to right, #e50914, #000); color: #fff; padding: 15px; border-radius: 8px; margin: 20px auto; max-width: 800px; text-align: center;">
+                        <h3 style="color: #fff; margin-bottom: 10px;">NETFLIX DANS TON ABONNEMENT CANAL+</h3>
+                        <p>Plongez dans l’univers Netflix, désormais inclus dans l’offre TOUT CANAL+ !</p>
+                    </div>
+                    <p>Cliquez sur une offre pour voir les détails.</p>
+                </div>
+                <div class="canal-accordion">
+                    <!-- existing accordion items kept implicitly or need re-including? I should re-include them to be safe if replacing block -->
+                    <div class="canal-item">
+                        <div class="canal-item-header">
+                            <div class="canal-info">
+                                <h3>TOUT CANAL+</h3>
+                                <div class="canal-price-tag">25 000 FCFA /mois</div>
+                            </div>
+                            <img src="images/canal5.png" alt="Tout Canal+" class="canal-thumb">
+                            <span class="toggle-icon">+</span>
+                        </div>
+                        <div class="canal-item-body">
+                            <p class="canal-desc-text">Le meilleur de TOUT CANAL+. Plus de 350 chaînes TV et radio.</p>
+                            <div class="canal-features-list">
+                                <span>Netflix Basic</span>
+                                <span>Toutes les chaînes Canal+</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Simplified re-inclusion of other items for brevity in replacement, assuming user wants correction mostly -->
+                    <div class="canal-item">
+                        <div class="canal-item-header">
+                            <div class="canal-info">
+                                <h3>ACCESS+</h3>
+                                <div class="canal-price-tag">15 000 FCFA /mois</div>
+                            </div>
+                            <img src="images/canal4.png" alt="Access+" class="canal-thumb">
+                            <span class="toggle-icon">+</span>
+                        </div>
+                        <div class="canal-item-body">
+                            <p class="canal-desc-text">Plus de 280 chaînes TV et radio.</p>
+                        </div>
+                    </div>
+                    <div class="canal-item">
+                        <div class="canal-item-header">
+                            <div class="canal-info">
+                                <h3>EVASION</h3>
+                                <div class="canal-price-tag">10 000 FCFA /mois</div>
+                            </div>
+                            <img src="images/canal3.png" alt="Evasion" class="canal-thumb">
+                            <span class="toggle-icon">+</span>
+                        </div>
+                        <div class="canal-item-body">
+                            <p class="canal-desc-text">Plus de 300 chaînes.</p>
+                        </div>
+                    </div>
+                    <div class="canal-item">
+                        <div class="canal-item-header">
+                            <div class="canal-info">
+                                <h3>ACCESS</h3>
+                                <div class="canal-price-tag">5 000 FCFA /mois</div>
+                            </div>
+                            <img src="images/canal2.png" alt="Access" class="canal-thumb">
+                            <span class="toggle-icon">+</span>
+                        </div>
+                        <div class="canal-item-body">
+                            <p class="canal-desc-text">Plus de 260 chaînes.</p>
+                        </div>
+                    </div>
+                    <div class="canal-item">
+                        <div class="canal-item-header">
+                            <div class="canal-info">
+                                <h3>KWABO</h3>
+                                <div class="canal-price-tag">2 500 FCFA /mois</div>
+                            </div>
+                            <img src="images/canal1.png" alt="Kwabo" class="canal-thumb">
+                            <span class="toggle-icon">+</span>
+                        </div>
+                        <div class="canal-item-body">
+                            <p class="canal-desc-text">Plus de 250 chaînes TV et radio.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Photos -->
+            <div id="photos" class="content-section">
+                <div class="section-header">
+                    <h2>Photos d'Identité</h2>
+                </div>
+                <div class="photo-gallery">
+                    <div class="photo-item">
+                        <img src="images/id3.webp" alt="Prise de vue">
+                        <p>Prise de vue professionnelle</p>
+                    </div>
+                    <div class="photo-item">
+                        <img src="images/id2.webp" alt="Retouche">
+                        <p>Retouche et Traitement</p>
+                    </div>
+                    <div class="photo-item">
+                        <img src="images/imp.webp" alt="Impression">
+                        <p>Impression Immédiate</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Wifi -->
+            <div id="wifi" class="content-section">
+                <div class="section-header">
+                    <h2>Wifi Zone Haut Débit</h2>
+                </div>
+                <div class="wifi-table-container">
+                    <table class="wifi-table">
+                        <thead>
+                            <tr>
+                                <th>Durée</th>
+                                <th>Tarif</th>
+                                <th>Validité</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>4 Heures</td>
+                                <td class="wifi-price-cell">100 FCFA</td>
+                                <td>6 Heures</td>
+                            </tr>
+                            <tr>
+                                <td>24 Heures</td>
+                                <td class="wifi-price-cell">200 FCFA</td>
+                                <td>26 Heures</td>
+                            </tr>
+                            <tr>
+                                <td>3 Jours</td>
+                                <td class="wifi-price-cell">500 FCFA</td>
+                                <td>3J + 2H</td>
+                            </tr>
+                            <tr>
+                                <td>1 Mois</td>
+                                <td class="wifi-price-cell">3 000 FCFA</td>
+                                <td>30 Jours (Illimité)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Autres Services (ZigZag) -->
+            <div id="autres" class="content-section">
+                <div class="section-header">
+                    <h2 style="color: #6f42c1;">Autres Services</h2>
+                    <p class="section-subtitle">Nous vous accompagnons dans toutes vos démarches administratives.</p>
+                </div>
+
+                <div class="zigzag-container">
+                    <!-- Item 1: ANIP -->
+                    <div class="zigzag-item">
+                        <div class="zigzag-content">
+                            <h3>🏛️ Services de l’ANIP</h3>
+                            <p>Nous vous accompagnons dans toutes vos démarches administratives officielles.</p>
+                            <ul>
+                                <li>✔️ Établissement d’acte de naissance sécurisé</li>
+                                <li>✔️ Certificat d’Identification Personnelle (CIP)</li>
+                                <li>✔️ Corrections et mises à jour de données</li>
+                                <li>✔️ Assistance pour le suivi de dossier</li>
+                            </ul>
+                        </div>
+                        <div class="zigzag-image">
+                            <!-- Placeholder image for ANIP (using trust2 or similar if public.png unavailable) -->
+                            <img src="images/ani.png" alt="Services ANIP">
+                        </div>
+                    </div>
+
+                    <!-- Item 2: RAVIP -->
+                    <div class="zigzag-item">
+                        <div class="zigzag-content">
+                            <h3>🪪 RAVIP & Cartes biométriques</h3>
+                            <p>Simplifiez vos formalités d’identification nationale.</p>
+                            <ul>
+                                <li>✔️ Enrôlement RAVIP</li>
+                                <li>✔️ Demande de duplicata</li>
+                                <li>✔️ Carte biométrique</li>
+                                <li>✔️ Accompagnement pas à pas</li>
+                            </ul>
+                        </div>
+                        <div class="zigzag-image">
+                            <img src="images/anip2.jpg" alt="RAVIP">
+                        </div>
+                    </div>
+
+                    <!-- Item 3: Secretariat -->
+                    <div class="zigzag-item">
+                        <div class="zigzag-content">
+                            <h3>🖨️ Secrétariat Public</h3>
+                            <p>Des services rapides et professionnels pour vos documents.</p>
+                            <ul>
+                                <li>✔️ Saisie de documents</li>
+                                <li>✔️ Mise en forme professionnelle</li>
+                                <li>✔️ Impression & photocopie</li>
+                                <li>✔️ Reliure et plastification</li>
+                            </ul>
+                        </div>
+                        <div class="zigzag-image">
+                            <img src="images/printing.webp" alt="Secrétariat">
+                        </div>
+                    </div>
+
+                    <!-- Item 4: Digital Support -->
+                    <div class="zigzag-item">
+                        <div class="zigzag-content">
+                            <h3>💻 Assistance Digitale</h3>
+                            <p>Un accompagnement numérique accessible à tous.</p>
+                            <ul>
+                                <li>✔️ Aide à l’inscription en ligne</li>
+                                <li>✔️ Création d’adresses email</li>
+                                <li>✔️ Remplissage de formulaires administratifs</li>
+                                <li>✔️ Assistance plateformes publiques et privées</li>
+                            </ul>
+                        </div>
+                        <div class="zigzag-image">
+                            <img src="images/slider4.webp" alt="Assistance Digitale">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bonus-section"
+                    style="margin-top: 60px; text-align: center; background: #f0f4f8; padding: 40px; border-radius: 12px;">
+                    <h3>📞 Besoin d’aide ou d’un renseignement ?</h3>
+                    <p>Contactez-nous dès maintenant, notre équipe est à votre écoute.</p>
+                    <a href="contact.html" class="cta-button" style="margin-top: 20px;">Nous Contacter</a>
+                </div>
+            </div>
+
+        </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>TIBO Services</h3>
+                <p>Solutions digitales et assurances<br>pour un avenir serein.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Accès Rapide</h3>
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="services.html">Nos Services</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section contact-icons">
+                <h3>Contact</h3>
+                <a href="tel:+22953028627">
+                    <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2">
+                        <path
+                            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                    </svg>
+                    +229 53 02 86 27
+                </a>
+                <a href="https://wa.me/+2290153028627">
+                    <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="#25D366" stroke="none">
+                        <path
+                            d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                    </svg>
+                    WhatsApp
+                </a>
+                <a href="https://www.facebook.com/profile.php?id=100071050841787">
+                    <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2">
+                        <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                    </svg>
+                    Facebook
+                </a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2024 TIBO Services. Tous droits réservés.
+        </div>
+    </footer>
+</body>
+
+</html>

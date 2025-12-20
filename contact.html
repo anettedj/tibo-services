@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; script-src 'self' 'unsafe-inline' https://unpkg.com; img-src 'self' data: https://*.openstreetmap.org https://unpkg.com; style-src 'self' 'unsafe-inline' https://unpkg.com; connect-src https://nominatim.openstreetmap.org;">
+    <title>Contact - TIBO Services</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" defer></script>
+    <script src="js/main.js" defer></script>
+    <style>
+        #map {
+            height: 400px;
+            width: 100%;
+            border-radius: 10px;
+            z-index: 1;
+            /* Ensure map is below fixed header if overlapping */
+        }
+
+        .contact-section {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .contact-details {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .contact-form {
+            flex: 1;
+            min-width: 300px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <img src="images/tibo.png" alt="Logo TIBO Services">
+            </div>
+            <div class="menu-toggle" id="mobile-menu">
+                <span>&#9776;</span>
+            </div>
+            <nav>
+                <ul id="nav-list">
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="services.html">Nos Services</a></li>
+                    <li><a href="contact.html" class="active">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Subpage Hero -->
+    <section class="header-slider" style="height: 40vh;">
+        <img src="images/slider4.webp" alt="Contact Hero" class="slide" style="opacity: 1; animation: none;">
+        <div class="hero-content">
+            <h1>Contactez-Nous</h1>
+            <p>Nous sommes à votre écoute pour toute question.</p>
+        </div>
+    </section>
+
+    <section class="animate-on-scroll">
+        <div class="contact-container">
+            <div class="contact-info">
+                <h2>Nos Coordonnées</h2>
+                <div class="contact-info-item"
+                    style="margin-bottom: 20px; display: flex; align-items: center; gap: 15px;">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#d4af37" stroke-width="2">
+                        <path
+                            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                    </svg>
+                    <div>
+                        <strong>Téléphone :</strong><br>
+                        <a href="tel:+22953028627" style="color: var(--color-text);">+229 53 02 86 27</a> /
+                        <a href="tel:+2290164310794" style="color: var(--color-text);">+229 01 64 31 07 94</a>
+                    </div>
+                </div>
+                <div class="contact-info-item"
+                    style="margin-bottom: 20px; display: flex; align-items: center; gap: 15px;">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="#25D366" stroke="none">
+                        <path
+                            d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                    </svg>
+                    <div>
+                        <strong>WhatsApp :</strong><br>
+                        <a href="https://wa.me/+2290153028627" style="color: var(--color-text);">Discutez avec nous</a>
+                    </div>
+                </div>
+                <div class="contact-info-item" style="margin-bottom: 20px; align-items: flex-start;">
+                    <div style="display: flex; gap: 10px;">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#d4af37" stroke-width="2"
+                            style="margin-top: 3px;">
+                            <path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7z" />
+                            <circle cx="12" cy="9" r="2" />
+                        </svg>
+                        <div>
+                            <strong>Adresse :</strong><br>
+                            Maria-Gléta, non loin du CLCAM, Calavi, Bénin<br>
+                            <img src="images/tibo.png" alt="TIBO Services" style="width: 240px; margin-top: 15px;">
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- Properly Closing .contact-info -->
+
+            <div class="contact-form">
+                <h2>Envoyez un message</h2>
+                <div id="email-success" class="success-message">Message envoyé avec succès ! OK</div>
+                <form id="contact-form" onsubmit="sendToWhatsapp(event)">
+                    <div class="form-group">
+                        <label for="name">Nom Complet</label>
+                        <input type="text" id="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="cta-button" style="width: 100%;">Envoyer</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section class="map-section animate-on-scroll">
+        <h2 style="margin-top: 40px;">Nous Trouver</h2>
+        <div id="map"></div>
+        <p class="map-note" style="text-align: center; margin-top: 10px; color: var(--color-text-dark);"><strong
+                style="color: var(--color-secondary);">Note :</strong> Zoomez sur le marqueur pour voir la localisation
+            précise.</p>
+    </section>
+
+    <section class="partners animate-on-scroll" style="text-align: center; margin-top: 60px;">
+        <h2>Nos Partenaires</h2>
+        <div class="partner-slider-container">
+            <div class="partner-slider">
+                <div class="partner-card">
+                    <img src="images/logo-sunu.webp" alt="SUNU Assurance">
+                    <h3>SUNU Assurance</h3>
+                </div>
+                <div class="partner-card">
+                    <img src="images/canal-plus.webp" alt="Canal+">
+                    <h3>Abonnement Canal+</h3>
+                </div>
+                <div class="partner-card">
+                    <img src="images/uba-logo.webp" alt="UBA">
+                    <h3>UBA</h3>
+                </div>
+                <div class="partner-card">
+                    <img src="images/ecobank-logo.webp" alt="Ecobank">
+                    <h3>Ecobank</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>TIBO Services</h3>
+                <p>Solutions digitales et assurances<br>pour un avenir serein.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Accès Rapide</h3>
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="services.html">Nos Services</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section contact-icons">
+                <h3>Contact</h3>
+                <a href="tel:+22953028627">
+                    <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2">
+                        <path
+                            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                    </svg>
+                    +229 53 02 86 27
+                </a>
+                <a href="https://wa.me/+2290153028627">
+                    <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="#25D366" stroke="none">
+                        <path
+                            d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                    </svg>
+                    WhatsApp
+                </a>
+                <a href="https://www.facebook.com/profile.php?id=100071050841787">
+                    <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2">
+                        <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                    </svg>
+                    Facebook
+                </a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2024 TIBO Services. Tous droits réservés.
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            try {
+                // Leaflet Map Init
+                const defaultLat = 6.442;
+                const defaultLng = 2.342; // Coord approx Calavi/Godomey
+                const map = L.map('map').setView([defaultLat, defaultLng], 13);
+
+                L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                    maxZoom: 19,
+                    attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                }).addTo(map);
+
+                const address = "Maria-Gléta, Calavi, Bénin";
+
+                // Try to geocode
+                try {
+                    const response = await fetch(`https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(address)}`);
+                    if (response.ok) {
+                        const data = await response.json();
+                        if (data && data.length > 0) {
+                            const { lat, lon } = data[0];
+                            map.setView([parseFloat(lat), parseFloat(lon)], 15);
+                            L.marker([parseFloat(lat), parseFloat(lon)]).addTo(map)
+                                .bindPopup("TIBO Services<br>Maria-Gléta")
+                                .openPopup();
+                        } else {
+                            // Fallback
+                            L.marker([defaultLat, defaultLng]).addTo(map)
+                                .bindPopup("TIBO Services<br>(Localisation approximative)")
+                                .openPopup();
+                        }
+                    }
+                } catch (e) {
+                    console.warn("Geocoding failed", e);
+                    L.marker([defaultLat, defaultLng]).addTo(map);
+                }
+            } catch (error) {
+                console.error("Map error", error);
+            }
+        });
+    </script>
+</body>
+
+</html>
