@@ -117,11 +117,11 @@
                 <form id="contact-form" onsubmit="sendToWhatsapp(event)">
                     <div class="form-group">
                         <label for="name">Nom Complet</label>
-                        <input type="text" id="name" required>
+                        <input type="text" id="name" placeholder="Nom (facultatif)">
                     </div>
                     <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" required>
+                        <label for="phone">Numéro de téléphone</label>
+                        <input type="tel" id="phone" required placeholder="Votre numéro de téléphone">
                     </div>
                     <div class="form-group">
                         <label for="message">Message</label>
@@ -141,28 +141,32 @@
             précise.</p>
     </section>
 
-    <section class="partners animate-on-scroll" style="text-align: center; margin-top: 60px;">
-        <h2>Nos Partenaires</h2>
+    <!-- Section Partenaires - Style Cartes -->
+    <section class="partner-section animate-on-scroll">
+        <h2>Nos Partenaires de Confiance</h2>
         <div class="partner-slider-container">
             <div class="partner-slider">
                 <div class="partner-card">
-                    <img src="images/logo-sunu.webp" alt="SUNU Assurance">
+                    <img src="images/logo-sunu.webp" alt="SUNU Assurance Logo">
                     <h3>SUNU Assurance</h3>
+                    <p>Partenaire officiel pour vos solutions d'assurance.</p>
                 </div>
                 <div class="partner-card">
-                    <img src="images/canal-plus.webp" alt="Canal+">
-                    <h3>Abonnement Canal+</h3>
-                </div>
-                <div class="partner-card">
-                    <img src="images/uba-logo.webp" alt="UBA">
+                    <img src="images/uba-logo.webp" alt="UBA Logo">
                     <h3>UBA</h3>
+                    <p>United Bank for Africa - Une banque panafricaine leader.</p>
                 </div>
                 <div class="partner-card">
-                    <img src="images/ecobank-logo.webp" alt="Ecobank">
+                    <img src="images/ecobank-logo.webp" alt="Ecobank Logo">
                     <h3>Ecobank</h3>
+                    <p>La banque panafricaine, partenaire financier sûr.</p>
+                </div>
+                <div class="partner-card">
+                    <img src="images/canal-plus.webp" alt="Canal+ Logo">
+                    <h3>Canal+</h3>
+                    <p>Distributeur agréé pour vos abonnements TV.</p>
                 </div>
             </div>
-        </div>
     </section>
 
     <footer>

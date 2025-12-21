@@ -461,9 +461,9 @@ button.see-more:hover {
 }
 
 .trust .card img {
-    width: 160px;
+    width: 250px;
     /* Doubled radius */
-    height: 160px;
+    height: 250px;
     margin: 0 auto 20px;
     object-fit: cover;
     /* Cover the circle */
@@ -879,6 +879,30 @@ footer {
     color: var(--color-secondary) !important;
     border-color: var(--color-secondary) !important;
 }
+/* === MOBILE ONLY : flèches + scroll === */
+@media (max-width: 768px) {
+
+    .tabs-container {
+        justify-content: flex-start; /* uniquement mobile */
+        flex-wrap: nowrap;
+        overflow-x: auto;
+    }
+
+    .tab-arrow {
+        display: block;
+        background: transparent;
+        border: none;
+        font-size: 1.5rem;
+        cursor: pointer;
+        color: var(--color-success);
+    }
+}
+
+/* par défaut (PC) */
+.tab-arrow {
+    display: none;
+}
+
 
 /* Fix Contact Layout: Ensure .contact-form sits side-by-side */
 .contact-info,

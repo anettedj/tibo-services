@@ -132,15 +132,15 @@ if (canalItems.length > 0) {
 function sendToWhatsapp(event) {
     event.preventDefault();
     const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
+    const phone = document.getElementById('phone').value;
     const message = document.getElementById('message').value;
 
     // Construct WhatsApp Message
-    // Format: "Bonjour, je suis [Nom] ([Email]). [Message]"
-    const text = `*Nouveau message du site web*\n\n*Nom:* ${name}\n*Email:* ${email}\n\n*Message:*\n${message}`;
+    // Format: "Bonjour, je suis [Nom] ([Telephone]). [Message]"
+    const text = `*Nouveau message du site web*\n\n*Nom:* ${name || 'Non renseigné'}\n*Téléphone:* ${phone}\n\n*Message:*\n${message}`;
 
     // WhatsApp API URL (Phone: +229 61856138)
-    const whatsappUrl = `https://wa.me/22961856138?text=${encodeURIComponent(text)}`;
+    const whatsappUrl = `https://wa.me/22994554838?text=${encodeURIComponent(text)}`;
 
     window.open(whatsappUrl, '_blank');
 
