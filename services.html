@@ -16,7 +16,7 @@
     <header>
         <div class="header-container">
             <div class="logo">
-                <img src="images/tibo.png" alt="Logo TIBO Services">
+                <img src="images/tibo.jpeg" alt="Logo TIBO Services">
             </div>
             <div class="menu-toggle" id="mobile-menu">
                 <span>&#9776;</span>
@@ -33,10 +33,10 @@
 
     <!-- Subpage Hero -->
     <section class="header-slider" style="height: 40vh;">
-        <img src="images/slider1.webp" alt="Service Hero 1" class="slide">
-        <img src="images/slider2.webp" alt="Service Hero 2" class="slide">
-        <img src="images/slider4.webp" alt="Service Hero 3" class="slide">
-        <img src="images/tibo.png" alt="TIBO Services" class="slide"
+        <img src="images/canal+.webp" alt="Recharge cartes prépayées" class="slide">
+        <img src="images/photo-id.webp" alt="Vente de cartes" class="slide">
+        <img src="images/prepaid-card.webp" alt="Assurance" class="slide">
+        <img src="images/tibo.jpeg" alt="TIBO Services" class="slide"
             style="object-fit: contain; background: rgba(10,25,47,0.8);">
 
         <div class="hero-content">
@@ -53,19 +53,18 @@
         </div>
 
         <!-- MENU / TABS NAVIGATION -->
+        <!-- MENU / TABS NAVIGATION -->
         <div class="tabs-wrapper">
-         <button class="tab-arrow left">&#10094;</button>
             <div class="tabs-container">
                 <button class="tab-btn active" data-tab="overview">Tous les services</button>
+                <button class="tab-btn" data-tab="abonnements">Abonnements Canal+</button>
+                <button class="tab-btn" data-tab="recharges">Cartes prépayées</button>
                 <button class="tab-btn" data-tab="assurances">Assurances</button>
                 <button class="tab-btn" data-tab="photocopies">Photocopie & Impression</button>
-                <button class="tab-btn" data-tab="recharges">Recharges</button>
-                <button class="tab-btn" data-tab="abonnements">Abonnements Canal+</button>
                 <button class="tab-btn" data-tab="photos">Photos d'Identité</button>
                 <button class="tab-btn" data-tab="wifi">Wifi Zone</button>
                 <button class="tab-btn" data-tab="autres">Autres Services</button>
             </div>
-         <button class="tab-arrow right">&#10095;</button>
         </div>
 
         <!-- DYNAMIC CONTENT AREA -->
@@ -261,6 +260,14 @@
                             <p>Services Xpress Cash, rechargement et achat de cartes Ecobank.</p>
                         </div>
                     </div>
+
+                    <div class="banking-card">
+                        <img src="images/bisic.jpeg" alt="Ecobank">
+                        <div class="banking-info">
+                            <h3>Cartes Prépayées BISIC</h3>
+                            <p>Services de paiement, rechargement et achat de cartes BISIC</p>
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -283,76 +290,118 @@
                     </div>
                     <p>Cliquez sur une offre pour voir les détails.</p>
                 </div>
-                <div class="canal-accordion">
-                    <!-- existing accordion items kept implicitly or need re-including? I should re-include them to be safe if replacing block -->
-                    <div class="canal-item">
-                        <div class="canal-item-header">
-                            <div class="canal-info">
-                                <h3>TOUT CANAL+</h3>
-                                <div class="canal-price-tag">25 000 FCFA /mois</div>
+                <div class="canal-presentation">
+                    <!-- Offer 1: TOUT C+ (Text Left, Image Right) -->
+                    <div class="canal-card">
+                        <div class="canal-card-content">
+                            <span class="badge-new">Nouveauté</span>
+                            <h3>TOUT CANAL+</h3>
+                            <div class="price-block">
+                                <span class="price">25 000 FCFA</span>
+                                <span class="period">/mois</span>
                             </div>
-                            <img src="images/canal5.png" alt="Tout Canal+" class="canal-thumb">
-                            <span class="toggle-icon">+</span>
+                            <p class="summary">L'expérience ultime sans compromis.</p>
+                            <p class="description">Accédez à l'intégralité des chaînes CANAL+ (+350). Tout le sport, le
+                                cinéma, les séries et le grand divertissement. <strong>Netflix Basic est inclus</strong>
+                                pour ne rien manquer.</p>
+                            <ul class="canal-features">
+                                <li>✨ Pack VIP & Services Exclusifs</li>
+                                <li>🎬 Netflix & Cinéma Première</li>
+                                <li>⚽ Toutes les compétitions sportives</li>
+                            </ul>
                         </div>
-                        <div class="canal-item-body">
-                            <p class="canal-desc-text">Le meilleur de TOUT CANAL+. Plus de 350 chaînes TV et radio.</p>
-                            <div class="canal-features-list">
-                                <span>Netflix Basic</span>
-                                <span>Toutes les chaînes Canal+</span>
-                            </div>
+                        <div class="canal-card-image">
+                            <img src="images/canal1.png" alt="Tout Canal+">
                         </div>
                     </div>
-                    <!-- Simplified re-inclusion of other items for brevity in replacement, assuming user wants correction mostly -->
-                    <div class="canal-item">
-                        <div class="canal-item-header">
-                            <div class="canal-info">
-                                <h3>ACCESS+</h3>
-                                <div class="canal-price-tag">15 000 FCFA /mois</div>
+
+                    <!-- Offer 2: ACCESS+ (Image Left via CSS, Text Right) -->
+                    <div class="canal-card reverse">
+                        <div class="canal-card-content">
+                            <h3>ACCESS+</h3>
+                            <div class="price-block">
+                                <span class="price">15 000 FCFA</span>
+                                <span class="period">/mois</span>
                             </div>
-                            <img src="images/canal4.png" alt="Access+" class="canal-thumb">
-                            <span class="toggle-icon">+</span>
+                            <p class="summary">Le parfait équilibre pour la famille.</p>
+                            <p class="description">Plus de 280 chaînes incluant les grands rendez-vous sportifs, le
+                                cinéma et les séries sur les 13 chaînes CANAL+. Une offre riche pour satisfaire tout le
+                                monde.</p>
+                            <ul class="canal-features">
+                                <li>🌍 Programmes africains & Monde</li>
+                                <li>🏀 NBA TV Africa & Sport</li>
+                                <li>👨‍👩‍👧‍👦 Programmes Jeunesse</li>
+                            </ul>
                         </div>
-                        <div class="canal-item-body">
-                            <p class="canal-desc-text">Plus de 280 chaînes TV et radio.</p>
+                        <div class="canal-card-image">
+                            <img src="images/canal2.png" alt="Access+">
                         </div>
                     </div>
-                    <div class="canal-item">
-                        <div class="canal-item-header">
-                            <div class="canal-info">
-                                <h3>EVASION</h3>
-                                <div class="canal-price-tag">10 000 FCFA /mois</div>
+
+                    <!-- Offer 3: EVASION (Text Left, Image Right) -->
+                    <div class="canal-card">
+                        <div class="canal-card-content">
+                            <h3>EVASION</h3>
+                            <div class="price-block">
+                                <span class="price">10 000 FCFA</span>
+                                <span class="period">/mois</span>
                             </div>
-                            <img src="images/canal3.png" alt="Evasion" class="canal-thumb">
-                            <span class="toggle-icon">+</span>
+                            <p class="summary">Une variété de contenus pour tous.</p>
+                            <p class="description">Plus de 300 chaînes pour ne plus avoir à choisir. Sport,
+                                divertissement, émissions jeunesse et culture africaine. L'offre idéale pour le foyer.
+                            </p>
+                            <ul class="canal-features">
+                                <li>📺 +300 Chaînes TV & Radio</li>
+                                <li>🎢 Divertissement & Découverte</li>
+                                <li>⚽ Sport & Culture</li>
+                            </ul>
                         </div>
-                        <div class="canal-item-body">
-                            <p class="canal-desc-text">Plus de 300 chaînes.</p>
+                        <div class="canal-card-image">
+                            <img src="images/canal3.png" alt="Evasion">
                         </div>
                     </div>
-                    <div class="canal-item">
-                        <div class="canal-item-header">
-                            <div class="canal-info">
-                                <h3>ACCESS</h3>
-                                <div class="canal-price-tag">5 000 FCFA /mois</div>
+
+                    <!-- Offer 4: ACCESS (Image Left via CSS, Text Right) -->
+                    <div class="canal-card reverse">
+                        <div class="canal-card-content">
+                            <h3>ACCESS</h3>
+                            <div class="price-block">
+                                <span class="price">5 000 FCFA</span>
+                                <span class="period">/mois</span>
                             </div>
-                            <img src="images/canal2.png" alt="Access" class="canal-thumb">
-                            <span class="toggle-icon">+</span>
+                            <p class="summary">L'essentiel du divertissement.</p>
+                            <p class="description">Profitez de +260 chaînes : séries, musique, actus et programmes pour
+                                enfants. Inclut des chaînes phares comme CANAL+ SPORT 1, NOVELAS TV et PLANETE+.</p>
+                            <ul class="canal-features">
+                                <li>🎥 Séries & Novelas</li>
+                                <li>🧸 Télétoon+ & Piwi+</li>
+                                <li>⚽ Canal+ Sport 1</li>
+                            </ul>
                         </div>
-                        <div class="canal-item-body">
-                            <p class="canal-desc-text">Plus de 260 chaînes.</p>
+                        <div class="canal-card-image">
+                            <img src="images/canal4.png" alt="Access">
                         </div>
                     </div>
-                    <div class="canal-item">
-                        <div class="canal-item-header">
-                            <div class="canal-info">
-                                <h3>KWABO</h3>
-                                <div class="canal-price-tag">2 500 FCFA /mois</div>
+
+                    <!-- Offer 5: KWABO (Text Left, Image Right) -->
+                    <div class="canal-card">
+                        <div class="canal-card-content">
+                            <h3>KWABO</h3>
+                            <div class="price-block">
+                                <span class="price">2 500 FCFA</span>
+                                <span class="period">/mois</span>
                             </div>
-                            <img src="images/canal1.png" alt="Kwabo" class="canal-thumb">
-                            <span class="toggle-icon">+</span>
+                            <p class="summary">L'entrée de gamme accessible.</p>
+                            <p class="description">Plus de 250 chaînes pour rester connecté. Une large sélection de
+                                programmes locaux, d'information et de divertissement à petit prix.</p>
+                            <ul class="canal-features">
+                                <li>🗞️ Information & Actualités</li>
+                                <li>🎵 Musique & Culture</li>
+                                <li>💰 Prix Mini</li>
+                            </ul>
                         </div>
-                        <div class="canal-item-body">
-                            <p class="canal-desc-text">Plus de 250 chaînes TV et radio.</p>
+                        <div class="canal-card-image">
+                            <img src="images/canal5.png" alt="Kwabo">
                         </div>
                     </div>
                 </div>
@@ -397,17 +446,17 @@
                             <tr>
                                 <td>4 Heures</td>
                                 <td class="wifi-price-cell">100 FCFA</td>
-                                <td>6 Heures</td>
+                                <td>24 Heures</td>
                             </tr>
                             <tr>
                                 <td>24 Heures</td>
                                 <td class="wifi-price-cell">200 FCFA</td>
-                                <td>26 Heures</td>
+                                <td>24 Heures</td>
                             </tr>
                             <tr>
                                 <td>3 Jours</td>
                                 <td class="wifi-price-cell">500 FCFA</td>
-                                <td>3J + 2H</td>
+                                <td>3J </td>
                             </tr>
                             <tr>
                                 <td>1 Mois</td>
@@ -549,7 +598,7 @@
                 </a>
             </div>
         </div>
-        <div class="footer-bottom">
+        <div class="footer-bottom" style="color: #ffffff;">
             &copy; 2024 TIBO Services. Tous droits réservés.
         </div>
     </footer>

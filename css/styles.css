@@ -41,7 +41,13 @@ body {
     background-color: var(--color-background);
     color: var(--color-text);
     overflow-x: hidden;
+    font-family: var(--font-body);
+    background-color: var(--color-background);
+    color: var(--color-text);
+    overflow-x: hidden;
     line-height: 1.6;
+    font-size: 1.1rem;
+    /* Increased from default */
 }
 
 h1,
@@ -90,8 +96,8 @@ img {
 }
 
 section {
-    padding: 100px 20px 80px;
-    /* Padding Top augmenté pour header overlap */
+    padding: 60px 20px 40px;
+    /* Padding Reduced */
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -100,9 +106,8 @@ section {
    2. HEADER & NAVIGATION
    ========================================= */
 header {
-    background: rgba(10, 25, 47, 0.95);
-    backdrop-filter: blur(10px);
-    position: fixed;
+    background: rgba(58, 110, 165, 0.95);
+    position: relative;
     width: 100%;
     top: 0;
     z-index: 1000;
@@ -130,8 +135,8 @@ nav ul {
 }
 
 nav a {
-    color: #ffd700;
-    /* Or Jaune plus vif pour contraste sur Bleu Nuit */
+    color: #e0e0e0;
+    /* Gris très clair pour contraste sur le nouveau bleu */
     font-weight: 500;
     font-size: 1.1rem;
     position: relative;
@@ -150,8 +155,15 @@ nav a::before {
     left: 0;
     width: 0;
     height: 2px;
-    background: var(--color-secondary);
+    background: #ff9900;
+    /* Orange visible */
     transition: var(--transition);
+}
+
+nav a.active::before {
+    width: 100%;
+    /* Ensure active link is underlined */
+    background: #ff9900;
 }
 
 nav a:hover::before {
@@ -191,7 +203,8 @@ nav a:hover::before {
     object-fit: cover;
     opacity: 0;
     /* Optimisation Animation : Crossfade continue */
-    animation: crossFade 20s infinite;
+    animation: crossFade 10s infinite;
+    /* Faster cycle */
     filter: brightness(0.4);
     /* Plus sombre pour ressortir le texte */
     z-index: 1;
@@ -250,27 +263,25 @@ nav a:hover::before {
     }
 }
 
-/* Staggered Delays (5 images * 5s each approx cycle, but revised for overlap) 
-   Cycle de 20s (4 images principales)
-*/
+/* Staggered Delays (4 images * 2.5s each = 10s cycle) */
 .slide:nth-of-type(1) {
     animation-delay: 0s;
 }
 
 .slide:nth-of-type(2) {
-    animation-delay: 5s;
+    animation-delay: 2.5s;
 }
 
 .slide:nth-of-type(3) {
-    animation-delay: 10s;
+    animation-delay: 5s;
 }
 
 .slide:nth-of-type(4) {
-    animation-delay: 15s;
+    animation-delay: 7.5s;
 }
 
 .slide:nth-of-type(5) {
-    animation-delay: 20s;
+    animation-delay: 10s;
 }
 
 /* Si 5eme image */
@@ -278,6 +289,81 @@ nav a:hover::before {
 /* =========================================
    4. COMPONENTS
    ========================================= */
+/* Global Card Image Fix for Index (Full Bleed) */
+.insurance-cards .card {
+    padding: 0;
+    /* No padding on sides/top, only bottom for text */
+    overflow: hidden;
+    /* contain image */
+}
+
+.insurance-cards .card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    margin-bottom: 0;
+    border-radius: 10px 10px 0 0;
+    /* Top corners rounded only */
+}
+
+.insurance-cards .card h3 {
+    padding: 20px 20px 0;
+    font-size: 1.5rem;
+    /* Standardized size */
+}
+
+.insurance-cards .card p {
+    padding: 0 20px 20px;
+}
+
+/* Specific green title */
+h3.assurance3 {
+    color: #2e7d32;
+    /* Green */
+}
+
+/* Testimonial Colors */
+.testimonial-card span {
+    display: block;
+    margin-top: 15px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    /* Default color fallback */
+    color: var(--color-primary);
+}
+
+/* Varied colors for testimonial names */
+.testimonial-card:nth-child(1) span {
+    color: #2e7d32;
+}
+
+/* Green */
+.testimonial-card:nth-child(2) span {
+    color: #ff9900;
+}
+
+/* Orange */
+.testimonial-card:nth-child(3) span {
+    color: #9c27b0;
+}
+
+/* Purple/Violet */
+.testimonial-card:nth-child(4) span {
+    color: #000;
+}
+
+/* Black */
+.testimonial-card:nth-child(5) span {
+    color: #d32f2f;
+}
+
+/* Red */
+.testimonial-card:nth-child(6) span {
+    color: #1565c0;
+}
+
+/* Blue */
+
 .section-subtitle {
     text-align: center;
     color: var(--color-text-dark);
@@ -378,8 +464,13 @@ nav a:hover::before {
 .mission-image img {
     border-radius: 10px;
     box-shadow: var(--shadow-card);
-    max-width: 80%;
-    /* Images plus petites comme demandé */
+    width: auto;
+    /* Allow width to adjust */
+    max-width: 100%;
+    max-height: 300px;
+    /* Limit height as requested */
+    object-fit: contain;
+    /* Maintain ratio */
     margin: 0 auto;
 }
 
@@ -389,24 +480,46 @@ nav a:hover::before {
     /* Meme couleur que le body mnt */
 }
 
-.partner-slider {
+.partner-container {
+    width: 100%;
+    overflow-x: auto;
+    /* Allow manual scrolling */
+    padding: 20px 0;
+    scrollbar-width: none;
+    /* Hide scrollbar Firefox */
+}
+
+.partner-container::-webkit-scrollbar {
+    display: none;
+    /* Hide scrollbar Chrome/Safari */
+}
+
+.partner-track {
     display: flex;
     gap: 30px;
-    justify-content: center;
-    flex-wrap: wrap;
-    padding: 20px;
+    width: max-content;
+    animation: scrollLeft 25s linear infinite;
+    padding-left: 20px;
+}
+
+.partner-track:hover {
+    animation-play-state: paused;
 }
 
 .partner-card {
     background: #fff;
-    padding: 10px;
-    /* Moins de padding pour laisser place à l'image */
+    padding: 0;
+    /* Remove padding for full-width image */
     border-radius: 8px;
     box-shadow: var(--shadow-card);
+    min-width: 250px;
+    /* Ensure fixed width */
     width: 250px;
     text-align: center;
     transition: var(--transition);
     overflow: hidden;
+    flex: 0 0 auto;
+    /* Prevent shrinking */
 }
 
 .partner-card:hover {
@@ -415,23 +528,50 @@ nav a:hover::before {
 
 .partner-card img {
     width: 100%;
-    /* Image prend toute la largeur */
     height: 150px;
-    /* Hauteur fixe plus grande */
-    object-fit: contain;
-    /* Ou cover selon besoin, contain préserve logo */
-    margin-bottom: 10px;
+    object-fit: cover;
+    /* Cover full area */
+    margin-bottom: 0;
+    /* Removing margin to handle via text padding */
+    display: block;
 }
 
 .partner-card h3 {
     font-size: 1.1rem;
     color: var(--color-primary);
-    margin-bottom: 5px;
+    margin: 15px 15px 5px;
+    /* Add margin/padding */
 }
 
 .partner-card p {
     font-size: 0.9rem;
     color: var(--color-text-dark);
+    margin: 0 15px 20px;
+    /* Add margin/padding */
+}
+
+.scroll-hint {
+    text-align: center;
+    color: var(--color-text-dark);
+    margin-top: 10px;
+    opacity: 0.7;
+    animation: pulseHint 2s infinite;
+    pointer-events: none;
+    /* Let clicks pass through */
+}
+
+@keyframes pulseHint {
+
+    0%,
+    100% {
+        opacity: 0.5;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.05);
+    }
 }
 
 button.see-more {
@@ -680,6 +820,22 @@ button.see-more:hover {
     border-color: var(--color-secondary);
 }
 
+/* --- Contact Page Specifics --- */
+.contact-slider .slide {
+    /* filter: brightness(1) !important;  Removed to restore dark overlay */
+    object-position: center center !important;
+    /* Focus on center of image */
+    /* object-fit: cover is default, usually best. 
+       If user wants less zoom, we can't do much without whitespace or distortion 
+       unless we change container height. */
+}
+
+.contact-slider h1,
+.contact-slider p {
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+    /* Ensure text keeps contrast */
+}
+
 /* Services Page Search */
 .search-bar {
     max-width: 500px;
@@ -730,7 +886,7 @@ button.see-more:hover {
    6. FOOTER
    ========================================= */
 footer {
-    background: #0a192f;
+    background: #3a6ea5;
     padding: 60px 20px 20px;
     border-top: 1px solid var(--color-secondary);
     text-align: center;
@@ -879,29 +1035,6 @@ footer {
     color: var(--color-secondary) !important;
     border-color: var(--color-secondary) !important;
 }
-/* === MOBILE ONLY : flèches + scroll === */
-@media (max-width: 768px) {
-
-    .tabs-container {
-        justify-content: flex-start; /* uniquement mobile */
-        flex-wrap: nowrap;
-        overflow-x: auto;
-    }
-
-    .tab-arrow {
-        display: block;
-        background: transparent;
-        border: none;
-        font-size: 1.5rem;
-        cursor: pointer;
-        color: var(--color-success);
-    }
-}
-
-/* par défaut (PC) */
-.tab-arrow {
-    display: none;
-}
 
 
 /* Fix Contact Layout: Ensure .contact-form sits side-by-side */
@@ -912,23 +1045,29 @@ footer {
 }
 
 /* --- Banking Services Grid --- */
+/* --- Banking Services Grid --- */
 .banking-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    /* Back to 300 to ensure 3 can fit */
+    gap: 20px;
+    /* Reasonable gap */
     margin-top: 30px;
 }
 
 .banking-card {
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 15px;
+    /* Reduced gap inside card */
     background: #fff;
-    padding: 30px;
+    padding: 20px 25px;
+    /* Optimized padding */
     border-radius: 12px;
     box-shadow: var(--shadow-card);
     border: 1px solid #eee;
     transition: var(--transition);
+    /* Removed restrictive widths to allow grid to control sizing */
 }
 
 .banking-card:hover {
@@ -1025,7 +1164,7 @@ footer {
     /* If text is small, container is small. */
     height: 100%;
     object-fit: cover;
-    max-height: 400px;
+    max-height: 300px;
     /* Cap it */
 }
 
@@ -1391,20 +1530,77 @@ footer {
 }
 
 /* Responsive Tweaks */
-@media (max-width: 768px) {
-    .tabs-container {
-        flex-wrap: nowrap;
-        overflow-x: auto;
-        justify-content: flex-start;
-        padding-bottom: 10px;
-        -webkit-overflow-scrolling: touch;
+.tabs-wrapper {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    /* To contain shadows/arrows if needed, but allow inner scroll */
+}
+
+/* Arrows indicators */
+.tabs-wrapper::before,
+.tabs-wrapper::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 30px;
+    height: 30px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    pointer-events: none;
+    /* Let clicks pass through */
+    z-index: 10;
+    opacity: 0.6;
+}
+
+.tabs-wrapper::before {
+    left: 5px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23d4af37' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='15 18 9 12 15 6'%3E%3C/polyline%3E%3C/svg%3E");
+}
+
+.tabs-wrapper::after {
+    right: 5px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23d4af37' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='9 18 15 12 9 6'%3E%3C/polyline%3E%3C/svg%3E");
+    animation: pulseArrow 2s infinite;
+}
+
+@keyframes pulseArrow {
+
+    0%,
+    100% {
+        transform: translateY(-50%) translateX(0);
     }
 
-    .tab-btn {
-        flex: 0 0 auto;
-        font-size: 0.9rem;
-        padding: 10px 20px;
+    50% {
+        transform: translateY(-50%) translateX(5px);
     }
+}
+
+.tabs-container {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    justify-content: flex-start;
+    padding-bottom: 10px;
+    -webkit-overflow-scrolling: touch;
+    /* Padding ends to avoiding cutting first/last item */
+    padding-left: 40px;
+    padding-right: 40px;
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+.tabs-container::-webkit-scrollbar {
+    display: none;
+    /* Chrome/Safari */
+}
+
+.tab-btn {
+    flex: 0 0 auto;
+    font-size: 0.9rem;
+    padding: 10px 20px;
+}
 }
 
 .assurance {
@@ -1424,9 +1620,163 @@ footer {
     color: #0b143f;
     font-weight: 600;
 }
+
 .section-header {
     font-size: 20px;
     text-align: center;
-    font-weight: bold; /* facultatif si tu veux le titre en gras */
-    margin-bottom: 20px; /* facultatif pour espacer le titre du contenu */
+    font-weight: bold;
+    /* facultatif si tu veux le titre en gras */
+    margin-bottom: 20px;
+    /* facultatif pour espacer le titre du contenu */
+}
+
+/* --- Canal+ Presentation (ZigZag Layout) --- */
+.canal-presentation {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    max-width: 1000px;
+    /* Increased to allow wide cards */
+    margin: 30px auto;
+}
+
+.canal-card {
+    display: flex;
+    flex-wrap: wrap;
+    /* Responsive wrap */
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    min-height: 400px;
+    /* Ensure substantial height */
+}
+
+/* Reverse layout for alternating cards */
+.canal-card.reverse {
+    flex-direction: row-reverse;
+}
+
+.canal-card-content {
+    flex: 1;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-width: 300px;
+}
+
+.canal-card-image {
+    flex: 1;
+    min-width: 300px;
+    position: relative;
+    overflow: hidden;
+}
+
+.canal-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    /* Show full image content */
+    object-position: center;
+    display: block;
+    transition: transform 0.6s ease;
+    background-color: #f9f9f9;
+    /* Light background for 'contained' images */
+}
+
+.canal-card:hover .canal-card-image img {
+    transform: scale(1.05);
+    /* Zoom effect on hover */
+}
+
+/* Typography & Content Styling */
+.badge-new {
+    display: inline-block;
+    background: linear-gradient(135deg, #ff0000 0%, #ff4d4d 100%);
+    color: #fff;
+    font-weight: bold;
+    font-size: 0.8rem;
+    padding: 5px 12px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    align-self: flex-start;
+    box-shadow: 0 3px 10px rgba(255, 0, 0, 0.3);
+}
+
+.canal-card h3 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: var(--color-primary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.price-block {
+    display: flex;
+    align-items: baseline;
+    gap: 5px;
+    margin-bottom: 20px;
+}
+
+.price-block .price {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--color-secondary);
+}
+
+.price-block .period {
+    font-size: 1rem;
+    color: #777;
+}
+
+.canal-card .summary {
+    font-size: 1.2rem;
+    font-style: italic;
+    color: #555;
+    margin-bottom: 15px;
+    border-left: 4px solid var(--color-secondary);
+    padding-left: 15px;
+}
+
+.canal-card .description {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    color: var(--color-text);
+}
+
+.canal-features {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.canal-features li {
+    background: #f0f4f8;
+    color: #333;
+    padding: 8px 15px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    border: 1px solid #dae1e7;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+
+    .canal-card,
+    .canal-card.reverse {
+        flex-direction: column !important;
+        /* Stack: Text Top (1st), Image Bottom (2nd) */
+    }
+
+    .canal-card-image {
+        min-height: 250px;
+        /* Ensure image area has height */
+    }
 }

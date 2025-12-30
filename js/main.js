@@ -132,15 +132,36 @@ if (canalItems.length > 0) {
 function sendToWhatsapp(event) {
     event.preventDefault();
     const name = document.getElementById('name').value;
-    const phone = document.getElementById('phone').value;
+    const serviceSelect = document.getElementById('service');
+    const service = serviceSelect.options[serviceSelect.selectedIndex].text;
+    const serviceValue = serviceSelect.value;
     const message = document.getElementById('message').value;
 
-    // Construct WhatsApp Message
-    // Format: "Bonjour, je suis [Nom] ([Telephone]). [Message]"
-    const text = `*Nouveau message du site web*\n\n*Nom:* ${name || 'Non renseigné'}\n*Téléphone:* ${phone}\n\n*Message:*\n${message}`;
+    let phoneNumber = "2290153028626"; // Default Canal+
 
-    // WhatsApp API URL (Phone: +229 61856138)
-    const whatsappUrl = `https://wa.me/22994554838?text=${encodeURIComponent(text)}`;
+    switch (serviceValue) {
+        case 'canal':
+            phoneNumber = "2290153028626";
+            break;
+        case 'uba':
+            phoneNumber = "2290196044860";
+            break;
+        case 'assurance':
+            phoneNumber = "2290153028627";
+            break;
+        case 'autre':
+            phoneNumber = "2290154748994";
+            break;
+        default:
+            phoneNumber = "2290153028626"; // Default if something goes wrong
+    }
+
+    // Construct WhatsApp Message
+    // Format: "Bonjour, je suis [Nom]. Je suis intéressé par [Service]. [Message]"
+    const text = `*Message depuis le site web*\n\n*Nom:* ${name || 'Non renseigné'}\n*Service:* ${service}\n\n*Message:*\n${message}`;
+
+    // WhatsApp API URL
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(text)}`;
 
     window.open(whatsappUrl, '_blank');
 

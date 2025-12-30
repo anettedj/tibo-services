@@ -44,7 +44,7 @@
     <header>
         <div class="header-container">
             <div class="logo">
-                <img src="images/tibo.png" alt="Logo TIBO Services">
+                <img src="images/tibo.jpeg" alt="Logo TIBO Services">
             </div>
             <div class="menu-toggle" id="mobile-menu">
                 <span>&#9776;</span>
@@ -60,8 +60,9 @@
     </header>
 
     <!-- Subpage Hero -->
-    <section class="header-slider" style="height: 40vh;">
-        <img src="images/slider4.webp" alt="Contact Hero" class="slide" style="opacity: 1; animation: none;">
+    <section class="header-slider contact-slider" style="height: 40vh;">
+        <img src="images/contact.png" alt="Contact Hero" class="slide" style="opacity: 1; animation: none;">
+        <img src="images/tibo.jpeg" alt="Vente de cartes" class="slide">
         <div class="hero-content">
             <h1>Contactez-Nous</h1>
             <p>Nous sommes à votre écoute pour toute question.</p>
@@ -80,8 +81,49 @@
                     </svg>
                     <div>
                         <strong>Téléphone :</strong><br>
-                        <a href="tel:+22953028627" style="color: var(--color-text);">+229 53 02 86 27</a> /
-                        <a href="tel:+2290164310794" style="color: var(--color-text);">+229 01 64 31 07 94</a>
+                        <ul style="list-style: none; padding: 0; margin-top: 10px;">
+                            <li style="display: flex; align-items: center; gap: 10px; margin-bottom: 8px;">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#28a745"
+                                    stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                                <span><strong>Canal + :</strong> <a href="tel:+2290153028626"
+                                        style="color: var(--color-text);">01 53 02 86 26</a></span>
+                            </li>
+                            <li style="display: flex; align-items: center; gap: 10px; margin-bottom: 8px;">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#28a745"
+                                    stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                                <span><strong>Assurance :</strong> <a href="tel:+2290153028627"
+                                        style="color: var(--color-text);">01 53 02 86 27</a></span>
+                            </li>
+                            <li style="display: flex; align-items: center; gap: 10px; margin-bottom: 8px;">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#28a745"
+                                    stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                                <span><strong>Autres :</strong> <a href="tel:+2290154748994"
+                                        style="color: var(--color-text);">01 54 74 89 94</a></span>
+                            </li>
+                            <li style="display: flex; align-items: center; gap: 10px; margin-bottom: 8px;">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#28a745"
+                                    stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                                <span><strong>UBA :</strong> <a href="tel:+2290196044860"
+                                        style="color: var(--color-text);">01 96 04 48 60</a></span>
+                            </li>
+                            <li style="display: flex; align-items: center; gap: 10px; margin-bottom: 8px;">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#28a745"
+                                    stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                                <span><a href="tel:+2290198169126" style="color: var(--color-text);">01 98 16 91 26</a>
+                                    / <a href="tel:+2290140694900" style="color: var(--color-text);">01 40 69 49
+                                        00</a></span>
+                            </li>
+                        </ul>
                     </div>
                 </div>
                 <div class="contact-info-item"
@@ -92,7 +134,8 @@
                     </svg>
                     <div>
                         <strong>WhatsApp :</strong><br>
-                        <a href="https://wa.me/+2290153028627" style="color: var(--color-text);">Discutez avec nous</a>
+                        <a href="https://wa.me/+2290153028627" style="color: var(--color-text);">Discutez avec
+                            nous</a>
                     </div>
                 </div>
                 <div class="contact-info-item" style="margin-bottom: 20px; align-items: flex-start;">
@@ -105,7 +148,7 @@
                         <div>
                             <strong>Adresse :</strong><br>
                             Maria-Gléta, non loin du CLCAM, Calavi, Bénin<br>
-                            <img src="images/tibo.png" alt="TIBO Services" style="width: 240px; margin-top: 15px;">
+                            <img src="images/tibo.jpeg" alt="TIBO Services" style="width: 240px; margin-top: 15px;">
                         </div>
                     </div>
                 </div>
@@ -120,8 +163,15 @@
                         <input type="text" id="name" placeholder="Nom (facultatif)">
                     </div>
                     <div class="form-group">
-                        <label for="phone">Numéro de téléphone</label>
-                        <input type="tel" id="phone" required placeholder="Votre numéro de téléphone">
+                        <label for="service">Service Intéressé</label>
+                        <select id="service" required
+                            style="width: 100%; padding: 12px; background: rgb(159 180 211 / 50%); border: 1px solid var(--color-accent); color: var(--color-text); border-radius: 4px; font-family: inherit;">
+                            <option value="" disabled selected>Choisissez un service qui vous intéresse</option>
+                            <option value="canal">Abonnement Canal+</option>
+                            <option value="uba">Services UBA</option>
+                            <option value="assurance">Assurances</option>
+                            <option value="autre">Autres services</option>
+                        </select>
                     </div>
                     <div class="form-group">
                         <label for="message">Message</label>
@@ -134,7 +184,7 @@
     </section>
 
     <section class="map-section animate-on-scroll">
-        <h2 style="margin-top: 40px;">Nous Trouver</h2>
+        <h2 style="margin-top: 0;">Nous Trouver</h2>
         <div id="map"></div>
         <p class="map-note" style="text-align: center; margin-top: 10px; color: var(--color-text-dark);"><strong
                 style="color: var(--color-secondary);">Note :</strong> Zoomez sur le marqueur pour voir la localisation
@@ -144,12 +194,13 @@
     <!-- Section Partenaires - Style Cartes -->
     <section class="partner-section animate-on-scroll">
         <h2>Nos Partenaires de Confiance</h2>
-        <div class="partner-slider-container">
-            <div class="partner-slider">
+        <div class="partner-container">
+            <div class="partner-track">
+                <!-- Original Items -->
                 <div class="partner-card">
-                    <img src="images/logo-sunu.webp" alt="SUNU Assurance Logo">
-                    <h3>SUNU Assurance</h3>
-                    <p>Partenaire officiel pour vos solutions d'assurance.</p>
+                    <img src="images/canal-plus.webp" alt="Canal+ Logo">
+                    <h3>Canal+</h3>
+                    <p>Distributeur agréé pour vos abonnements TV.</p>
                 </div>
                 <div class="partner-card">
                     <img src="images/uba-logo.webp" alt="UBA Logo">
@@ -157,16 +208,52 @@
                     <p>United Bank for Africa - Une banque panafricaine leader.</p>
                 </div>
                 <div class="partner-card">
+                    <img src="images/bisic.jpeg" alt="BISIC Logo">
+                    <h3>BISIC</h3>
+                    <p>Partenaire financier pour vos services bancaires.</p>
+                </div>
+                <div class="partner-card">
+                    <img src="images/logo-sunu.webp" alt="SUNU Assurance Logo">
+                    <h3>SUNU Assurance</h3>
+                    <p>Partenaire officiel pour vos solutions d'assurance.</p>
+                </div>
+                <div class="partner-card">
                     <img src="images/ecobank-logo.webp" alt="Ecobank Logo">
                     <h3>Ecobank</h3>
                     <p>La banque panafricaine, partenaire financier sûr.</p>
                 </div>
+
+                <!-- Duplicates for Infinite Loop -->
                 <div class="partner-card">
                     <img src="images/canal-plus.webp" alt="Canal+ Logo">
                     <h3>Canal+</h3>
                     <p>Distributeur agréé pour vos abonnements TV.</p>
                 </div>
+                <div class="partner-card">
+                    <img src="images/uba-logo.webp" alt="UBA Logo">
+                    <h3>UBA</h3>
+                    <p>United Bank for Africa - Une banque panafricaine leader.</p>
+                </div>
+                <div class="partner-card">
+                    <img src="images/bisic.jpeg" alt="BISIC Logo">
+                    <h3>BISIC</h3>
+                    <p>Partenaire financier pour vos services bancaires.</p>
+                </div>
+                <div class="partner-card">
+                    <img src="images/logo-sunu.webp" alt="SUNU Assurance Logo">
+                    <h3>SUNU Assurance</h3>
+                    <p>Partenaire officiel pour vos solutions d'assurance.</p>
+                </div>
+                <div class="partner-card">
+                    <img src="images/ecobank-logo.webp" alt="Ecobank Logo">
+                    <h3>Ecobank</h3>
+                    <p>La banque panafricaine, partenaire financier sûr.</p>
+                </div>
             </div>
+        </div>
+        <div class="scroll-hint">
+            <span>&#8592;</span> <span style="font-size: 0.9rem;">Faites défiler</span> <span>&#8594;</span>
+        </div>
     </section>
 
     <footer>
@@ -209,7 +296,7 @@
                 </a>
             </div>
         </div>
-        <div class="footer-bottom">
+        <div class="footer-bottom" style="color: #ffffff; border-top: 1px solid rgba(255, 255, 255, 0.2);">
             &copy; 2024 TIBO Services. Tous droits réservés.
         </div>
     </footer>
