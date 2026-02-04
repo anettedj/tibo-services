@@ -1601,7 +1601,7 @@ footer {
     font-size: 0.9rem;
     padding: 10px 20px;
 }
-}
+
 
 .assurance {
     font-size: 28px;
@@ -1778,5 +1778,105 @@ footer {
     .canal-card-image {
         min-height: 250px;
         /* Ensure image area has height */
+    }
+}
+
+/* ===== Ajustement mobile : 3 boutons par ligne ===== */
+@media (max-width: 768px) {
+
+    .tabs-container {
+        flex-wrap: wrap;
+        /* Autorise le retour à la ligne */
+        overflow-x: hidden;
+        /* Supprime le scroll horizontal */
+        justify-content: center;
+        /* Centrage propre */
+        padding-left: 10px;
+        padding-right: 10px;
+        gap: 10px;
+        /* Espacement régulier */
+    }
+
+    .tab-btn {
+        flex: 0 0 calc(33.333% - 10px);
+        /* 3 boutons par ligne */
+        max-width: calc(33.333% - 10px);
+        text-align: center;
+        padding: 10px 8px;
+        /* Boutons plus compacts */
+        font-size: 0.85rem;
+        /* Texte adapté mobile */
+        white-space: normal;
+        /* Texte peut passer à la ligne */
+    }
+}
+
+/* ===== Mobile / petit écran : supprimer flèches + 3 boutons par ligne ===== */
+@media (max-width: 768px) {
+
+    /* Supprimer les flèches */
+    .tabs-wrapper::before,
+    .tabs-wrapper::after {
+        display: none !important;
+        content: none !important;
+    }
+
+    /* Libérer l’espace occupé par les flèches */
+    .tabs-wrapper {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    /* Conteneur des boutons */
+    .tabs-container {
+        flex-wrap: wrap;
+        overflow-x: hidden;
+        justify-content: center;
+        gap: 10px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    /* Boutons : 3 par ligne */
+    .tab-btn {
+        flex: 0 0 calc(33.333% - 10px);
+        max-width: calc(33.333% - 10px);
+        text-align: center;
+        font-size: 0.85rem;
+        padding: 10px 6px;
+        white-space: normal;
+    }
+}
+
+/* ===== Mobile / petit écran : grille 3 colonnes propre ===== */
+@media (max-width: 768px) {
+
+    .tabs-wrapper::before,
+    .tabs-wrapper::after {
+        display: none !important;
+        content: none !important;
+    }
+
+    .tabs-wrapper {
+        padding: 0;
+    }
+
+    .tabs-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        /* 3 boutons par ligne */
+        gap: 10px;
+        width: 100%;
+        padding: 10px;
+        overflow: visible;
+    }
+
+    .tab-btn {
+        width: 100%;
+        max-width: none;
+        padding: 10px 6px;
+        font-size: 0.85rem;
+        text-align: center;
+        white-space: normal;
     }
 }
