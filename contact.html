@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-Security-Policy"
         content="default-src 'self'; script-src 'self' 'unsafe-inline' https://unpkg.com; img-src 'self' data: https://*.openstreetmap.org https://unpkg.com; style-src 'self' 'unsafe-inline' https://unpkg.com; connect-src https://nominatim.openstreetmap.org;">
-    <title>Contact - TIBO Services</title>
+    <title>Contact - AJP Business</title>
     <link rel="stylesheet" href="css/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
@@ -44,7 +44,7 @@
     <header>
         <div class="header-container">
             <div class="logo">
-                <img src="images/tibo.jpeg" alt="Logo TIBO Services">
+                <img src="images/tibo.png" alt="Logo AJP Business">
             </div>
             <div class="menu-toggle" id="mobile-menu">
                 <span>&#9776;</span>
@@ -62,7 +62,7 @@
     <!-- Subpage Hero -->
     <section class="header-slider contact-slider" style="height: 40vh;">
         <img src="images/contact.png" alt="Contact Hero" class="slide" style="opacity: 1; animation: none;">
-        <img src="images/tibo.jpeg" alt="Vente de cartes" class="slide">
+        <img src="images/tibo.png" alt="Vente de cartes" class="slide">
         <div class="hero-content">
             <h1>Contactez-Nous</h1>
             <p>Nous sommes à votre écoute pour toute question.</p>
@@ -157,7 +157,7 @@
                                 style="vertical-align: middle; margin-right: 5px;">
                                 <polyline points="20 6 9 17 4 12"></polyline>
                             </svg>Calavi Tankpê<br>
-                            <img src="images/tibo.jpeg" alt="TIBO Services" style="width: 240px; margin-top: 15px;">
+                            <img src="images/tibo.png" alt="AJP Business" style="width: 240px; margin-top: 15px;">
                         </div>
                     </div>
                 </div>
@@ -268,7 +268,7 @@
     <footer>
         <div class="footer-content">
             <div class="footer-section">
-                <h3>TIBO Services</h3>
+                <h3>AJP Business</h3>
                 <p>Solutions digitales et assurances<br>pour un avenir serein.</p>
             </div>
             <div class="footer-section">
@@ -306,7 +306,7 @@
             </div>
         </div>
         <div class="footer-bottom" style="color: #ffffff; border-top: 1px solid rgba(255, 255, 255, 0.2);">
-            &copy; 2024 TIBO Services. Tous droits réservés.
+            &copy; 2024 AJP Business. Tous droits réservés.
         </div>
     </footer>
 
@@ -336,14 +336,14 @@
                             const marker = L.marker([parseFloat(lat), parseFloat(lon)]).addTo(map);
                             marker.bindPopup(`
                                 <div style="background: #fff; padding: 10px; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.2); font-family: 'Roboto', sans-serif;">
-                                    <strong style="color: #0a192f; display: block; margin-bottom: 5px;">TIBO Services</strong>
+                                    <strong style="color: #0a192f; display: block; margin-bottom: 5px;">AJP Business</strong>
                                     <span style="color: #666; font-size: 0.9em;">Maria-Gléta, Calavi</span>
                                 </div>
                             `, { closeButton: false, offset: L.point(0, -20) }).openPopup();
                         } else {
                             // Fallback
                             const marker = L.marker([defaultLat, defaultLng]).addTo(map);
-                            marker.bindPopup("TIBO Services<br>(Localisation approximative)").openPopup();
+                            marker.bindPopup("AJP Business<br>(Localisation approximative)").openPopup();
                         }
                     }
                 } catch (e) {
